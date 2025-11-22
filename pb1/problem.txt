@@ -1,0 +1,6 @@
+Let G = (V, E) be a graph; a m-matching in G is a matching M such that there is no matching M′ in G with M ⊊ M′. Let M and N be two m-matchings of G.
+(a) Define a function φ : M \ N → N \ M in the following way: for e = uv ∈ M \ N, there exists an
+edge f ∈ N \M such that f is incident with u or v, take φ(e) = f . Prove that φ is well-defined:
+both M \ N and N \ M are non-empty and an edge f like above really exists.
+(b) Show that |M \ N| ⩽ 2|φ(M \ N)| ⩽ 2|N \ M|.
+(c) Prove that |M| ⩽ 2|N|.

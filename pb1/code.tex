@@ -1,0 +1,31 @@
+\subsection*{a)}
+
+We know that $M \setminus N$ is the domain of $\varphi$ and $N \setminus M$ is the codomain of $\varphi$. The function $\varphi$ cannot be well-defined if:
+\begin{itemize}
+\item $M = \emptyset$, because then $M \setminus N = \emptyset$
+\item $N = \emptyset$, because then $N \setminus M = \emptyset$
+\item $M = N$, because then $M \setminus N = \emptyset$ and $N \setminus M = \emptyset$
+\end{itemize}
+Therefore, from now on we assume that $M \ne \emptyset$, $N \ne \emptyset$, and $M \ne N$.
+
+\begin{enumerate}
+\item
+Assume, by contradiction, that $M \setminus N = \emptyset$, which implies $M \subseteq N$. From the maximality property of $M$ we know that $M \subsetneq N$ cannot occur, so the only option is $M = N$, which contradicts the condition $M \ne N$ stated above.
+Similarly, assume by contradiction that $N \setminus M = \emptyset$ and we obtain a contradiction. Thus, $M \setminus N \ne \emptyset$ and $N \setminus M \ne \emptyset$.
+
+\item
+Consider the edge $e = uv \in M \setminus N$. From the maximality property of $N$ we know that the vertices $u$ and $v$ must be covered in $N$, because otherwise we could add the edge $e = uv$ to $N$, forming an m-matching $N' = N \cup \{e\}$ with $N \subsetneq N'$. Therefore, there must exist an edge $f \in N$ 
+incident to $u$ or $v$. We have:
+
+\begin{itemize}
+    \item $e \in M$
+    \item $f \in N$
+    \item $e$ and $f$ are adjacent
+\end{itemize}
+
+From the above it follows that $f \notin M \cap N$, since the matching property of $M$ would not be satisfied. Hence the edge $f$ is not contained in $M$, and therefore $f \in N \setminus M$.
+
+
+\end{enumerate}
+
+From (1) and (2) it follows that the function $\varphi$ is well-defined.
