@@ -29,3 +29,14 @@ From the above it follows that $f \notin M \cap N$, since the matching property 
 \end{enumerate}
 
 From (1) and (2) it follows that the function $\varphi$ is well-defined.
+
+\subsection*{b)}
+\begin{enumerate}
+    \item 
+    An edge $f = u'v' \in N \setminus M$ can be adjacent to an edge $e_{u'} \in M \setminus N$ at $u'$ or to an edge $e_{v'} \in M \setminus N$ at $v'$, therefore to at most 2 edges from $M \setminus N$. We define the auxiliary function $\lambda : N \setminus M \to \mathbb{N}$, $\lambda(f) = |\{\ e \in M \setminus N \ | \ \varphi(e) = f \ \}|$. For each edge $f$ in the image of the function, the number of edges $e$ in the domain of the function for which $\varphi(e) = f$ is at most 2, that is $\lambda(f) \le 2$. Each edge $e \in M \setminus N$ is counted exactly once in the sum $\sum_{f \in \varphi(M \setminus N)}|\lambda(f)|$ = $|M \setminus N|$. $\sum_{f \in \varphi(M \setminus N)}|\lambda(f)| \le \sum_{f \in \varphi(M \setminus N)}2  = 2|\varphi(M \setminus N)| \implies |M \setminus N| \le 2|\varphi(M \setminus N)|$.
+    
+    \item
+    The image of the function $\varphi$ is included in the codomain of the function $\varphi$, therefore $\varphi(M \setminus N) \subseteq N \setminus M$, so $|\varphi(M \setminus N)| \le |N \setminus M| \implies 2|\varphi(M \setminus N)| \le 2|N \setminus M|$.
+
+\end{enumerate}
+From (1) and (2) it follows that $ |M \setminus N| \le 2|\varphi(M \setminus N)| \le 2|N \setminus M|$.
