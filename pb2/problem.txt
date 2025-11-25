@@ -1,0 +1,4 @@
+Let G = (V, E) be a connected graph c : E → R a cost function on its edges, and T = (V, E′) a minimum cost spanning tree of G with respect to c. For any two vertices x, y ∈ V we denote by PT (x, y) the xy-path in T.
+(a) Let uv ∈ E \E′ and α(uv) = max {c(xy) : xy ∈ E(PT (u, v))}. Prove that decreasing the cost of uv by no more than (c(uv) − α(uv)), T remains a minimum cost spanning tree of G with respect to the new cost function.
+
+(b) Let uv ∈ E′ and β(uv) = min {c(xy) : xy ∈ E \ E′ s. t. uv ∈ E(PT (x, y))}. Prove that increasing the cost of uv by no more than (β(uv)−c(uv)), T remains minimum cost spanning tree of G with respect to the new cost function.
