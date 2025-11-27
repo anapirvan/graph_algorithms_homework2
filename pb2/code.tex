@@ -1,0 +1,8 @@
+\subsection*{a)}
+Let $c':E\to \mathbb{R}$ be the new cost function.\
+Assume that $T$ is no longer an MST with respect to $c' \Rightarrow$
+there exists an MST in $G$, denoted $T'$, whose cost is smaller than that of $T$.\
+Since only the edge $uv$ has its cost decreased ($c(uv)-\alpha(uv) \geq 0$, because the necessary condition for removing the edge $uv$ from $G$ is that its cost be at least equal to the maximum cost of the edges on the path from $u$ to $v$ that does not go through $uv$), and $T'$ has smaller cost than $T$, the only possibility is that $T'$ contains the edge $uv$.\
+If we remove the edge $uv$ from $T'$, then the tree becomes disconnected and two connected components appear, which we will consider the sets of our cut.\
+Then $uv$ must be the only minimum-cost edge connecting a node in $u$’s set with a node in $v$’s set. Otherwise, we would contradict the fact that $T'$ must necessarily contain the edge $uv$.\
+But in $T$ there is an edge on the path from $u$ to $v$ that connects two nodes from different sets of the cut and whose cost is less than or equal to the cost of edge $uv$ ($c'(uv)=c(uv)-(c(uv)-\alpha(uv)-x)$, where $0\leq x\leq c(uv)-\alpha(uv) \Rightarrow c'(uv)=\alpha(uv)+x$, with $0\leq x\leq c(uv)-\alpha(uv) \Rightarrow c'(uv) \geq \alpha(uv)$) $\Rightarrow$ $uv$ is not the only minimum-cost edge $\Rightarrow$ the cost of $T'$ is greater than or equal to the cost of $T$ (contradiction) $\Rightarrow$ $T$ is an MST.
