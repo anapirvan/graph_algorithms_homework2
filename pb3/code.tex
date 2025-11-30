@@ -1,0 +1,10 @@
+\subsection*{a)}
+
+Let $T$ be the set of edges of a minimum-cost partial tree of the graph $G$. Since $c_1 < c_2$, according to the greedy principle (specific to Kruskal’s algorithm), the construction of the tree $T$ prioritizes including low-cost edges. Thus, $T$ must include a maximum number of edges from $E_1$ that do not form cycles.
+
+The edges selected from $E_1$ generate an acyclic partial subgraph that preserves the same connected components as the graph $G_1$. Let $p_1$ be the number of these connected components. We know the property that an acyclic graph with $n$ vertices and $p_1$ connected components has exactly $n - p_1$ edges. Therefore, the number of edges of cost $c_1$ in the tree $T$ is $n - p_1$.
+
+For $T$ to become a partial tree of the entire graph $G$, the $p_1$ disjoint connected components must be interconnected. This requires adding exactly $p_1 - 1$ additional edges. Since the potential edges of cost $c_1$ have been exhausted (any other edge from $E_1$ would create a cycle), the remaining connections must necessarily be selected from $E_2$.
+
+In conclusion, the total cost of the partial tree is the sum of the costs of the two categories of edges:
+\[ \text{Costul minim al lui T} = c_1 \cdot (n - p_1) + c_2 \cdot (p_1 - 1). \]
