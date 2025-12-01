@@ -8,3 +8,36 @@ For $T$ to become a partial tree of the entire graph $G$, the $p_1$ disjoint con
 
 In conclusion, the total cost of the partial tree is the sum of the costs of the two categories of edges:
 \[ \text{Costul minim al lui T} = c_1 \cdot (n - p_1) + c_2 \cdot (p_1 - 1). \]
+
+\subsection*{b)}
+
+The standard Kruskal algorithm has a complexity of $\mathcal{O}(|E| \log |V|)$, given by the edge-sorting step.
+In our case, since the cost function has only two values ($c_1$ and $c_2$), we can completely eliminate the sorting step, reducing the complexity to linear time.
+
+\textbf{Algorithm Description:}
+
+\begin{enumerate}
+    \item \textbf{Initialization:} We create a Union–Find structure for the $n$ nodes. Initially, each node is an isolated component.
+    
+    \item \textbf{Processing edges of minimum cost ($E_1$):}
+    Instead of sorting, we directly traverse the list of edges with cost $c_1$. For each edge $(u, v) \in E_1$:
+    \begin{itemize}
+        \item If $\text{Find}(u) \neq \text{Find}(v)$ (they do not form a cycle), we merge the components ($\text{Union}(u, v)$) and add the edge to the solution.
+    \end{itemize}
+    
+    \item \textbf{Processing edges of maximum cost ($E_2$):}
+    After exhausting all edges of cost $c_1$, we traverse the list of edges with cost $c_2$. For each edge $(u, v) \in E_2$:
+    \begin{itemize}
+        \item If $\text{Find}(u) \neq \text{Find}(v)$, we merge the components and add the edge to the solution.
+        \item We may stop once we have selected a total of $n-1$ edges.
+    \end{itemize}
+\end{enumerate}
+
+\textbf{Complexity Analysis:}
+\begin{itemize}
+    \item In the absence of the sorting operation, the running time is determined solely by the calls made to the \textit{Union–Find} structure.
+    \item In conclusion, the algorithm effectively runs in \textbf{linear} time, that is:
+    \[
+        \mathcal{O}(|V| + |E|).
+    \]
+\end{itemize}
