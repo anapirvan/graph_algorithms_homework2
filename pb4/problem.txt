@@ -1,0 +1,3 @@
+Let G = (V, E) be a graph with |G| ⩾ 3.
+(a) Let G be 2-connected and u, v ∈ V . Build the graph G1 by adding a new vertex x to G and linking x to u and v. Prove that G1 is also 2-connected.
+(b) Show that G is 2-connected if and only if for any three distinct vertices u, v, and w there exists a path from u to v containing w.
