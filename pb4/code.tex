@@ -1,0 +1,45 @@
+\subsection*{a)}
+
+\textbf{Property:} A graph $G=(V,E)$ with $|G| \ge 3$ is $2$-connected if it has no articulation points and is connected (an articulation point is a vertex $a$ whose removal increases the number of connected components of $G$; $G-a$ is not connected).
+
+\noindent\textbf{Proof:} For $G_1$ to be $2$-connected, the following must hold:
+\begin{itemize}
+    \item $|G_1|\ge 3$ (but we know $|G|\ge 3 \Rightarrow  |G_1|=|G|+1 \ge 4$)
+    \item $G_1$ has no articulation points ($\forall a \in V(G_1), G_1-a$ is connected)
+\end{itemize}
+
+{\setlength{\leftmargini}{50pt}
+\textit{\textbf{Case I:}} the removed vertex ($w$) is exactly $x$ (added in $G_1$)
+\begin{itemize}
+    \item $G_1-x=G$
+    \item We know $G$ is $2$-connected $\Rightarrow G$ is connected. Since $G_1-x=G \Rightarrow G_1-x$ is connected.
+\end{itemize}
+
+\textit{\textbf{Case II:}} the removed vertex ($w$) belongs to the original graph ($G$)
+\begin{itemize}
+    \item $V(G_1)=(V(G)\setminus \{w\})\cup \{x\}$
+    \item We know $G$ is $2$-connected $\Rightarrow G - w$ is connected 
+    \item All vertices $V(G)\setminus \{w\}$ are connected to each other in $G-w$
+    \item We show that $x$ is connected to this connected component
+\end{itemize}
+
+\textit{\textbf{Subcase IIa:}} $w \ne u$, $w \ne v$
+\begin{itemize}
+    \item In $G_1 - w$, $x$ is still connected to vertices $u,v$
+    \item $u$ belongs to the connected component of $G-w$, and $x$ is connected to $u$, which is connected to all other vertices in $V(G) \setminus \{w\}$ \textit{(similarly, we could also use vertex $v$)} 
+    \item $G_1-w$ is connected
+\end{itemize}
+
+\textit{\textbf{Subcase IIb:}} $w=u$
+\begin{itemize}
+    \item In $G_1-u$, $x$ loses the edge to $u$, but remains connected to $v$
+    \item $v \ne u$, and $v$ belongs to the connected component of $G-u$
+    \item We know $G-u$ is connected since $G$ is $2$-connected
+    \item $x$ is connected to $v$, and $v$ is connected to all other vertices in $V(G)\setminus \{u\}$
+    \item $x$ is connected to the entire connected component of $G-u$
+    \item $G_1-u(u=w)$ is connected
+\end{itemize}
+
+\textit{\textbf{Subcase IIc:}} $w=v$ \textit{(analogous to Subcase IIb)\\\\}
+\textbf{Conclusion:} From the two cases that cover all possibilities, we can conclude that $G_1$ is $2$-connected.
+}
