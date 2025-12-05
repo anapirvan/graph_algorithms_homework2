@@ -43,3 +43,21 @@
 \textit{\textbf{Subcase IIc:}} $w=v$ \textit{(analogous to Subcase IIb)\\\\}
 \textbf{Conclusion:} From the two cases that cover all possibilities, we can conclude that $G_1$ is $2$-connected.
 }
+
+\subsection*{b)}
+We want to prove an equivalence. We will prove each direction of the equivalence separately.
+
+\begin{itemize}
+\item \textbf{1. The $\Rightarrow$'' direction.} If $G$ is $2$-connected, then for any three distinct vertices $u, v$, and $w$ there exists a path from $u$ to $v$ that contains the vertex $w$. \begin{itemize}[label=$\circ$] \item We know that $G$ is $2$-connected. \item We construct a new graph $G'$ by adding a vertex $x$ and edges $(x,u)$ and $(x,v)$. \item According to the proof in point \textbf{a)}, $G'$ is $2$-connected. \item We choose the (distinct) vertices $x$ and $w \Rightarrow$ there exist two internally disjoint paths from $x$ to $w$ (they have no vertices in common except the endpoints). \item Let $D_1$ and $D_2$ be the two disjoint paths from $x$ to $w$ in $G'$. \item From the way we added the vertex $x$, it only has edges to $u$ and $v$. \item Since $D_1$ and $D_2$ are internally disjoint, they leave the vertex $x$ through different edges, as follows: \begin{itemize}[label=$\rightarrow$] \item $D_1: x\leadsto u\leadsto...\leadsto w$ \item $D_2: x\leadsto v\leadsto...\leadsto w$ \end{itemize} \item $D_{uw}$ (the path from $u$ to $w$) and $D_{vw}$ (the path from $v$ to $w$) share only the vertex $w$. \item Thus, we can construct the desired path: $u\rightarrow D_{uw}\rightarrow w \rightarrow D_{wv}\rightarrow v$ (where $D_{wv}$ is the reverse of the path $D_{vw}$). \end{itemize} \item \textbf{2. The $\Leftarrow$'' direction.} If for any three distinct vertices $u, v$, and $w$ there exists a path from $u$ to $v$ that contains the vertex $w$, then $G$ is $2$-connected ($G$ is connected and has no articulation points).
+\begin{itemize} [label=$\circ$]
+\item $|G| \ge 3$ (assumption)
+\item We arbitrarily choose a vertex $a \in V(G)$ which we will remove.
+\item To show that $a$ is not an articulation point, we will show that $G-a$ is connected $\Leftrightarrow \forall b,c \in V(G-a), (b\ne c)$ they are connected by a path in $G-a$.
+\item Assumption: for any three distinct vertices $u, v$, and $w$ there exists a path from $u$ to $v$ that contains the vertex $w$.
+\item Let: $u=a, v=b, w=c$
+\item By the assumption, there must exist a path from $a$ to $b$ that contains $c$. That is, there exists a path $D: a\leadsto...\leadsto c\leadsto...\leadsto b$.
+\item $D$ is a path $\Rightarrow$ all vertices on the path are distinct, and $b$ is the final vertex ($b$ appears in $D_{cb}$ but does not appear in $D_{ac}$).
+\item $a \notin D_{cb} \Rightarrow D_{cb}$ is a valid path in $G-a$, and $b$ and $c$ were chosen arbitrarily $\Rightarrow G-a$ is connected.
+\item The vertex $a$ was chosen arbitrarily $\Rightarrow G$ has no articulation points $\Rightarrow G$ is $2$-connected.
+\end{itemize}
+\end{itemize}
